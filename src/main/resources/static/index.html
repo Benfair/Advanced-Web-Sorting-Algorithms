@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Leaderboard</h1>
+<div class="controls">
+    <input type="text" id="searchInput" placeholder="Search by name">
+    <button onclick="searchParticipants()">Search</button>
+    <select id="sortAlgorithm">
+        <option value="quick">Quick Sort</option>
+        <option value="heap">Heap Sort</option>
+        <option value="merge">Merge Sort</option>
+        <option value="radix">Radix Sort</option>
+        <option value="bucket">Bucket Sort</option>
+    </select>
+    <button onclick="getSortedParticipants()">Sort</button>
+</div>
+<div class="controls">
+    <input type="text" id="addName" placeholder="Name">
+    <input type="number" id="addScore" placeholder="Score">
+    <button onclick="addParticipant()">Add Participant</button>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody id="leaderboardBody">
+    <!-- Leaderboard data will be inserted here -->
+    </tbody>
+</table>
+<div id="editForm">
+    <h3>Edit Participant</h3>
+    <input type="hidden" id="editId">
+    <input type="number" id="editScore" placeholder="Score">
+    <button onclick="updateScore()">Update</button>
+    <button onclick="deleteParticipant()">Delete</button>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
+
